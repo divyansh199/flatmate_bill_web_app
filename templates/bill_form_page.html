@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel= "stylesheet" href ="static/main.css">
+</head>
+<body>
+    <h2>The Bill Form</h2>
+    <p>Fill the Form and click the button to get result</p>
+    <form action="/bill", method = 'post'>
+        {{ billform.amount.label }} {{ billform.amount }}
+        <br>
+        {{ billform.period.label }} {{ billform.period }}
+        <hr>
+        <p>First FlateMate</p>
+
+        {{ billform.name1.label }} {{ billform.name1 }}
+        <br>
+        {{ billform.days1.label }} {{ billform.days1 }}
+
+        <hr>
+        <p>Second FlateMate</p>
+
+        {{ billform.name2.label }} {{ billform.name2 }}
+        <br>
+        {{ billform.days2.label }} {{ billform.days2 }}
+        <br>
+        {{ billform.button }}
+
+        <br>
+        {% if result %}
+             {{name1}} pays {{amount1}} <br>
+             {{name2}} pays {{amount2}}
+        {% endif %}
+
+    </form>
+</body>
+</html>
